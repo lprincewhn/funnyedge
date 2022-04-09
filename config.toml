@@ -1,0 +1,5 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = "Funny Edge Workshop"
+theme = "hugo-theme-learn"
+
