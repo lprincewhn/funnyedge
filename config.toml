@@ -3,3 +3,9 @@ languageCode = 'en-us'
 title = "Funny Edge Workshop"
 theme = "hugo-theme-learn"
 
+[deployment]
+[[deployment.targets]]
+name = "s3"
+URL = "s3://unicorninc-20220209103154-hostingbucket-master?region=us-west-1"
+cloudFrontDistributionID = "EGDRVCL9VRUOO"
+
