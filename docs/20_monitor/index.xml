@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>监控分析 on Funny Edge Workshop</title>
-    <link>http://edge.svhw.tech/20_monitor/</link>
+    <link>http://funnyedge.svhw.tech/20_monitor/</link>
     <description>Recent content in 监控分析 on Funny Edge Workshop</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Apr 2022 14:13:47 +0800</lastBuildDate><atom:link href="http://edge.svhw.tech/20_monitor/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Apr 2022 14:13:47 +0800</lastBuildDate><atom:link href="http://funnyedge.svhw.tech/20_monitor/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CloudFront指标</title>
-      <link>http://edge.svhw.tech/20_monitor/10_aws_metrics/</link>
+      <link>http://funnyedge.svhw.tech/20_monitor/10_aws_metrics/</link>
       <pubDate>Tue, 12 Apr 2022 14:32:23 +0800</pubDate>
       
-      <guid>http://edge.svhw.tech/20_monitor/10_aws_metrics/</guid>
+      <guid>http://funnyedge.svhw.tech/20_monitor/10_aws_metrics/</guid>
       <description>&amp;lt;敬请期待&amp;gt;</description>
     </item>
     
     <item>
       <title>自定义指标</title>
-      <link>http://edge.svhw.tech/20_monitor/20_customeized_metrics/</link>
+      <link>http://funnyedge.svhw.tech/20_monitor/20_customeized_metrics/</link>
       <pubDate>Tue, 12 Apr 2022 14:32:23 +0800</pubDate>
       
-      <guid>http://edge.svhw.tech/20_monitor/20_customeized_metrics/</guid>
+      <guid>http://funnyedge.svhw.tech/20_monitor/20_customeized_metrics/</guid>
       <description>&amp;lt;敬请期待&amp;gt;</description>
     </item>
     
     <item>
       <title>使用Athena分析访问日志</title>
-      <link>http://edge.svhw.tech/20_monitor/30_access_log/</link>
+      <link>http://funnyedge.svhw.tech/20_monitor/30_access_log/</link>
       <pubDate>Tue, 12 Apr 2022 14:32:23 +0800</pubDate>
       
-      <guid>http://edge.svhw.tech/20_monitor/30_access_log/</guid>
+      <guid>http://funnyedge.svhw.tech/20_monitor/30_access_log/</guid>
       <description>&amp;lt;敬请期待&amp;gt;</description>
     </item>
     
