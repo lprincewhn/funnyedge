@@ -16,7 +16,6 @@ https://github.com/gohugoio/hugo/releases
 - 创建章节：hugo new --kind chapter 10_introduction/_index.md
 - 创建文章：hugo new 10_introduction/10_about.md
 - 编译内容：hugo -D
-- 上传发布：hugo deploy
 
 ### 3. 更多
 
