@@ -16,10 +16,7 @@ draft: false
 ### 例子：
 
 1. 指定节点检查HTTP连接过程
-![dig](/images/http_connect.png?classes=border)
+![HTTP连接](/images/http_connect.png?classes=border)
 
 2. 测试HTTP下载性能
-![dig](/images/http_performance.png?classes=border)
-
-3. 测试服务器的keep-alive时间
-![dig](/images/openssl_keep_alive.png?classes=border)
+![HTTP下载性能](/images/http_performance.png?classes=border)

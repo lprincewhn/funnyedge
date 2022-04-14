@@ -18,8 +18,10 @@ draft: false
 
 ### 例子
 1. 通过openssl检查服务器证书
-![dig](/images/openssl_connect.png?classes=border)
+![openssl连接](/images/openssl_connect.png?classes=border)
 2. 通过openssl检查SSL会话恢复情况和发送请求
-![dig](/images/openssl_ticket.png?classes=border)
+![openssl会话恢复](/images/openssl_ticket.png?classes=border)
+3. 测试服务器的keep-alive时间
+![连接保持](/images/openssl_keep_alive.png?classes=border)
 
 
