@@ -2,10 +2,65 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://example.org/categories/</loc>
+    <loc>http://edge.svhw.tech/</loc>
+    <lastmod>2022-04-12T14:01:29+08:00</lastmod>
   </url><url>
-    <loc>http://example.org/</loc>
+    <loc>http://edge.svhw.tech/20_monitor/10_aws_metrics/</loc>
+    <lastmod>2022-04-12T14:32:23+08:00</lastmod>
   </url><url>
-    <loc>http://example.org/tags/</loc>
+    <loc>http://edge.svhw.tech/30_operations/10_tag/</loc>
+    <lastmod>2022-04-12T14:32:23+08:00</lastmod>
+  </url><url>
+    <loc>http://edge.svhw.tech/10_quickstart/10_console/</loc>
+    <lastmod>2022-04-12T14:22:31+08:00</lastmod>
+  </url><url>
+    <loc>http://edge.svhw.tech/50_troubleshoot/10_curl/</loc>
+    <lastmod>2022-04-12T14:22:31+08:00</lastmod>
+  </url><url>
+    <loc>http://edge.svhw.tech/50_troubleshoot/20_openssl/</loc>
+    <lastmod>2022-04-12T14:22:31+08:00</lastmod>
+  </url><url>
+    <loc>http://edge.svhw.tech/40_tunning/10_originshield/</loc>
+    <lastmod>2022-04-12T14:22:31+08:00</lastmod>
+  </url><url>
+    <loc>http://edge.svhw.tech/10_quickstart/</loc>
+    <lastmod>2022-04-12T14:13:47+08:00</lastmod>
+  </url><url>
+    <loc>http://edge.svhw.tech/20_monitor/20_customeized_metrics/</loc>
+    <lastmod>2022-04-12T14:32:23+08:00</lastmod>
+  </url><url>
+    <loc>http://edge.svhw.tech/30_operations/20_certificate_expire/</loc>
+    <lastmod>2022-04-12T14:32:23+08:00</lastmod>
+  </url><url>
+    <loc>http://edge.svhw.tech/10_quickstart/20_certificate/</loc>
+    <lastmod>2022-04-12T14:22:31+08:00</lastmod>
+  </url><url>
+    <loc>http://edge.svhw.tech/20_monitor/</loc>
+    <lastmod>2022-04-12T14:13:47+08:00</lastmod>
+  </url><url>
+    <loc>http://edge.svhw.tech/20_monitor/30_access_log/</loc>
+    <lastmod>2022-04-12T14:32:23+08:00</lastmod>
+  </url><url>
+    <loc>http://edge.svhw.tech/10_quickstart/40_dynamic/</loc>
+    <lastmod>2022-04-12T14:32:23+08:00</lastmod>
+  </url><url>
+    <loc>http://edge.svhw.tech/10_quickstart/30_static/</loc>
+    <lastmod>2022-04-12T14:22:31+08:00</lastmod>
+  </url><url>
+    <loc>http://edge.svhw.tech/30_operations/</loc>
+    <lastmod>2022-04-12T14:13:47+08:00</lastmod>
+  </url><url>
+    <loc>http://edge.svhw.tech/40_tunning/</loc>
+    <lastmod>2022-04-12T14:13:47+08:00</lastmod>
+  </url><url>
+    <loc>http://edge.svhw.tech/10_quickstart/50_website/</loc>
+    <lastmod>2022-04-12T14:32:23+08:00</lastmod>
+  </url><url>
+    <loc>http://edge.svhw.tech/50_troubleshoot/</loc>
+    <lastmod>2022-04-12T14:13:47+08:00</lastmod>
+  </url><url>
+    <loc>http://edge.svhw.tech/categories/</loc>
+  </url><url>
+    <loc>http://edge.svhw.tech/tags/</loc>
   </url>
 </urlset>

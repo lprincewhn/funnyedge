@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>快速部署 on Funny Edge Workshop</title>
+    <link>http://edge.svhw.tech/10_quickstart/</link>
+    <description>Recent content in 快速部署 on Funny Edge Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Apr 2022 14:13:47 +0800</lastBuildDate><atom:link href="http://edge.svhw.tech/10_quickstart/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CloudFront控制台介绍</title>
+      <link>http://edge.svhw.tech/10_quickstart/10_console/</link>
+      <pubDate>Tue, 12 Apr 2022 14:22:31 +0800</pubDate>
+      
+      <guid>http://edge.svhw.tech/10_quickstart/10_console/</guid>
+      <description>打开控制台 使用以下URL打开CloudFront控制台: https://console.aws.amazon.com/cloudfront/v3/home?#/distributions 字段说明  ID：自动分配的13位随机字符串标识，如：EXXXXXXXXXXXX 说明：用户输入的描述性文字，可用于描述该分配的用途，业务等信息 域名：CloudFront分配的.cloudfront.net后缀域名，一般用于配置DNS解析中的CNAME值 备用域名（可选）：用户指定用来访问该分配的域名，一般称为加速域名，可配置多个。配置备用域名必须先上传包含该域名的证书，请参考&amp;ldquo;证书管理(可选)&amp;rdquo; 源：源站域名，可配置多个。有多个源站时可通过配置”缓存行为“选择源站。  其他操作   如果控制台语言是英文，可按照以下步骤切换语言至中文:   在控制台顶部搜索栏中输入AWS服务名称快速切换服务控制台   </description>
+    </item>
+    
+    <item>
+      <title>证书管理(可选)</title>
+      <link>http://edge.svhw.tech/10_quickstart/20_certificate/</link>
+      <pubDate>Tue, 12 Apr 2022 14:22:31 +0800</pubDate>
+      
+      <guid>http://edge.svhw.tech/10_quickstart/20_certificate/</guid>
+      <description>打开ACM证书管理控制台 https://us-east-1.console.aws.amazon.com/acm/home?region=us-east-1#/certificates
+注意：只有“弗吉尼亚北部”区域的证书可以被CloudFront使用，申请和导入CloudFront使用的证书时需要注意所在区域。 两种方式获得证书   直接申请由AWS颁发的证书(免费) 请求成功后回到证书列表页面，点击”证书ID“进入证书详情页面，在“域”中可看到用于验证的CNAME记录，将此处所有记录配置到DNS解析记录中，稍等几分钟即可完成验证获取证书 注意：证书在过期前60天AWS会自动对符合条件的证书进行续订，续订时需要再次验证这些CNAME记录，因此可保留这些记录供续订使用
+AWS证书特征请参考：https://docs.aws.amazon.com/zh_cn/acm/latest/userguide/acm-certificate.html
+AWS证书的续订条件请参考：https://docs.aws.amazon.com/zh_cn/acm/latest/userguide/dns-renewal-validation.html
+  通过第三方购买证书然后将证书导入   注意：出于证书和私钥安全考虑，无论是AWS颁发的或是导入的第三方证书，一旦上传，没有任何办法可以导出或下载，因此需要在本地对证书和私钥进行妥善保管，以供未来使用</description>
+    </item>
+    
+    <item>
+      <title>动态接口加速</title>
+      <link>http://edge.svhw.tech/10_quickstart/40_dynamic/</link>
+      <pubDate>Tue, 12 Apr 2022 14:32:23 +0800</pubDate>
+      
+      <guid>http://edge.svhw.tech/10_quickstart/40_dynamic/</guid>
+      <description>&amp;lt;敬请期待&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>静态内容加速</title>
+      <link>http://edge.svhw.tech/10_quickstart/30_static/</link>
+      <pubDate>Tue, 12 Apr 2022 14:22:31 +0800</pubDate>
+      
+      <guid>http://edge.svhw.tech/10_quickstart/30_static/</guid>
+      <description>  打开CloudFront控制台，点击&amp;quot;创建分配&amp;quot;按钮 https://us-east-1.console.aws.amazon.com/cloudfront/v3/home
+  创建过程可指定的参数共分4部分: &amp;ldquo;源&amp;rdquo;, &amp;ldquo;默认缓存行为&amp;rdquo;, &amp;ldquo;函数关联&amp;rdquo;, &amp;ldquo;设置&amp;rdquo;。 在&amp;quot;源域&amp;quot;中填入源站域名，其余保留默认配置，点击&amp;quot;创建分配&amp;quot;即可完成。
+  创建过程其他常用参数意义如下：
+   源  协议: 访问源站时使用HTTP还是HTTPS，如果选择&amp;quot;匹配查看器&amp;quot;，则使用和客户端一样的协议 HTTP端口和HTTPS端口: 源站的服务端口    </description>
+    </item>
+    
+    <item>
+      <title>网站加速</title>
+      <link>http://edge.svhw.tech/10_quickstart/50_website/</link>
+      <pubDate>Tue, 12 Apr 2022 14:32:23 +0800</pubDate>
+      
+      <guid>http://edge.svhw.tech/10_quickstart/50_website/</guid>
+      <description>&amp;lt;敬请期待&amp;gt;</description>
+    </item>
+    
+  </channel>
+</rss>

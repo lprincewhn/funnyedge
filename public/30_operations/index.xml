@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>运维管理 on Funny Edge Workshop</title>
+    <link>http://edge.svhw.tech/30_operations/</link>
+    <description>Recent content in 运维管理 on Funny Edge Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Apr 2022 14:13:47 +0800</lastBuildDate><atom:link href="http://edge.svhw.tech/30_operations/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>添加域名标签进行计费</title>
+      <link>http://edge.svhw.tech/30_operations/10_tag/</link>
+      <pubDate>Tue, 12 Apr 2022 14:32:23 +0800</pubDate>
+      
+      <guid>http://edge.svhw.tech/30_operations/10_tag/</guid>
+      <description>&amp;lt;敬请期待&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>证书过期提醒</title>
+      <link>http://edge.svhw.tech/30_operations/20_certificate_expire/</link>
+      <pubDate>Tue, 12 Apr 2022 14:32:23 +0800</pubDate>
+      
+      <guid>http://edge.svhw.tech/30_operations/20_certificate_expire/</guid>
+      <description>&amp;lt;敬请期待&amp;gt;</description>
+    </item>
+    
+  </channel>
+</rss>

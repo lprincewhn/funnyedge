@@ -1,7 +1,10 @@
-baseURL = 'http://example.org/'
+baseURL = 'http://edge.svhw.tech/'
 languageCode = 'en-us'
 title = "Funny Edge Workshop"
 theme = "hugo-theme-learn"
+
+[params]
+  disableSearch = true
 
 [deployment]
 [[deployment.targets]]

@@ -7,8 +7,10 @@ draft: false
 
 ### 打开控制台
 使用以下URL打开CloudFront控制台: 
-https://console.aws.amazon.com/cloudfront/v3/home?#/distributions
+https://console.aws.amazon.com/cloudfront/v3/home?#/distributions 
 ![查看分配列表](/images/list_distributions.png?classes=border)
+
+**Cloudfront使用“分配（Distribution）”对用户配置进行管理，如果多个域名的配置需求一样，可以使用同一个分配进行加速，这些域名的缓存是共享的。**
 
 ### 字段说明
 - ID：自动分配的13位随机字符串标识，如：EXXXXXXXXXXXX

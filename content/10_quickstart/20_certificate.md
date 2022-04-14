@@ -8,7 +8,10 @@ draft: false
 ### 打开ACM证书管理控制台
 https://us-east-1.console.aws.amazon.com/acm/home?region=us-east-1#/certificates
 
-**注意：只有“弗吉尼亚北部”区域的证书可以被CloudFront使用，申请和导入CloudFront使用的证书时需要注意所在区域。**
+**注意：**
+1. 只有“弗吉尼亚北部”区域的证书可以被CloudFront使用，申请和导入CloudFront使用的证书时需要注意所在区域。
+2. 虽然ACM上可以支持4096位的RSA证书，但是CloudFront目前只支持2048位的RSA证书，因此大于2048位的RSA证书无法在CloudFront控制台看到。
+
 ![证书管理控制台区域](/images/acm_region.png?classes=border)
 
 ### 两种方式获得证书
