@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>添加域名标签进行计费 :: Funny Edge Workshop</title>
+    <title>检查HTTP连接 :: Funny Edge Workshop</title>
 
     
     <link href="/css/nucleus.css?1649926899" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/30_operations/10_tag/">
+  <body class="" data-url="/50_troubleshoot/30_curl/">
     <nav id="sidebar" class="">
 
 
@@ -307,7 +307,7 @@
   
     
     <li data-nav-id="/30_operations/" title="运维管理" class="dd-item
-        parent
+        
         
         
         ">
@@ -333,7 +333,7 @@
  
   
     
-      <li data-nav-id="/30_operations/10_tag/" title="添加域名标签进行计费" class="dd-item active">
+      <li data-nav-id="/30_operations/10_tag/" title="添加域名标签进行计费" class="dd-item ">
         <a href="/30_operations/10_tag/">
         添加域名标签进行计费
         
@@ -438,7 +438,7 @@
   
     
     <li data-nav-id="/50_troubleshoot/" title="故障排查" class="dd-item
-        
+        parent
         
         
         ">
@@ -506,7 +506,7 @@
  
   
     
-      <li data-nav-id="/50_troubleshoot/30_curl/" title="检查HTTP连接" class="dd-item ">
+      <li data-nav-id="/50_troubleshoot/30_curl/" title="检查HTTP连接" class="dd-item active">
         <a href="/50_troubleshoot/30_curl/">
         检查HTTP连接
         
@@ -574,7 +574,7 @@
             
           
           
-            <a href='/'>有趣的CDN</a> > <a href='/30_operations/'>运维管理</a> > 添加域名标签进行计费
+            <a href='/'>有趣的CDN</a> > <a href='/50_troubleshoot/'>故障排查</a> > 检查HTTP连接
           
         
           
@@ -587,7 +587,16 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#有用的参数">有用的参数</a></li>
+        <li><a href="#例子">例子：</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -603,14 +612,37 @@
           
             <h1>
               
-              添加域名标签进行计费
+              检查HTTP连接
             </h1>
           
 
         
 
 
-<p>&lt;敬请期待&gt;</p>
+<h3 id="有用的参数">有用的参数</h3>
+<ul>
+<li>-v：显示连接细节</li>
+<li>-s：不显示进度条</li>
+<li>-w：打印指定参数</li>
+<li>-o /dev/null：不显示响应内容，一般做故障排查时不需要关心响应的内容</li>
+<li>-H：指定标头</li>
+<li>&ndash;resolve：指定连接地址</li>
+</ul>
+<h3 id="例子">例子：</h3>
+<ol>
+<li>
+<p>指定节点检查HTTP连接过程
+<img src="/images/http_connect.png?classes=border" alt="dig"></p>
+</li>
+<li>
+<p>测试HTTP下载性能
+<img src="/images/http_performance.png?classes=border" alt="dig"></p>
+</li>
+<li>
+<p>测试服务器的keep-alive时间
+<img src="/images/openssl_keep_alive.png?classes=border" alt="dig"></p>
+</li>
+</ol>
 
 
 <footer class="footline">
@@ -811,7 +843,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -824,7 +855,6 @@
             
             
                 
-                    
                     
                 
                 
@@ -836,41 +866,6 @@
                     
             
         
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
                         
             
@@ -920,6 +915,42 @@
             
         
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
             
             
@@ -940,6 +971,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -964,10 +996,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/30_operations/" title="运维管理"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/50_troubleshoot/20_openssl/" title="检查SSL连接"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/30_operations/20_certificate_expire/" title="证书过期提醒" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/50_troubleshoot/10_dns_check/" title="检查域名解析情况" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

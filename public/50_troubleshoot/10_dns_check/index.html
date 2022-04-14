@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>添加域名标签进行计费 :: Funny Edge Workshop</title>
+    <title>检查域名解析情况 :: Funny Edge Workshop</title>
 
     
     <link href="/css/nucleus.css?1649926899" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/30_operations/10_tag/">
+  <body class="" data-url="/50_troubleshoot/10_dns_check/">
     <nav id="sidebar" class="">
 
 
@@ -307,7 +307,7 @@
   
     
     <li data-nav-id="/30_operations/" title="运维管理" class="dd-item
-        parent
+        
         
         
         ">
@@ -333,7 +333,7 @@
  
   
     
-      <li data-nav-id="/30_operations/10_tag/" title="添加域名标签进行计费" class="dd-item active">
+      <li data-nav-id="/30_operations/10_tag/" title="添加域名标签进行计费" class="dd-item ">
         <a href="/30_operations/10_tag/">
         添加域名标签进行计费
         
@@ -438,7 +438,7 @@
   
     
     <li data-nav-id="/50_troubleshoot/" title="故障排查" class="dd-item
-        
+        parent
         
         
         ">
@@ -464,7 +464,7 @@
  
   
     
-      <li data-nav-id="/50_troubleshoot/10_dns_check/" title="检查域名解析情况" class="dd-item ">
+      <li data-nav-id="/50_troubleshoot/10_dns_check/" title="检查域名解析情况" class="dd-item active">
         <a href="/50_troubleshoot/10_dns_check/">
         检查域名解析情况
         
@@ -574,7 +574,7 @@
             
           
           
-            <a href='/'>有趣的CDN</a> > <a href='/30_operations/'>运维管理</a> > 添加域名标签进行计费
+            <a href='/'>有趣的CDN</a> > <a href='/50_troubleshoot/'>故障排查</a> > 检查域名解析情况
           
         
           
@@ -587,7 +587,16 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#例子">例子</a></li>
+        <li><a href="#工具">工具</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -603,14 +612,45 @@
           
             <h1>
               
-              添加域名标签进行计费
+              检查域名解析情况
             </h1>
           
 
         
 
 
-<p>&lt;敬请期待&gt;</p>
+<p>通过dig命令可检查当前访问的PoP点及其IP：</p>
+<pre tabindex="0"><code># 正向解析获得节点IP
+# dig a.test.com +short
+# dig dxxxxxxx.cloudfront.net +short
+
+# 反向解析查看IP归属
+# dig 1.1.1.1 +short
+</code></pre><h3 id="例子">例子</h3>
+<p><img src="/images/dig.png?classes=border" alt="dig"></p>
+<h3 id="工具">工具</h3>
+<ol>
+<li>
+<p>检查全球DNS解析情况</p>
+<ul>
+<li><a href="https://dnschecker.org/">https://dnschecker.org/</a></li>
+<li><a href="https://cachecheck.opendns.com/">https://cachecheck.opendns.com/</a></li>
+</ul>
+</li>
+<li>
+<p>检查IP归属</p>
+<ul>
+<li><a href="http://ipip.net/">http://ipip.net/</a></li>
+<li><a href="https://bgp.he.net/">https://bgp.he.net/</a></li>
+</ul>
+</li>
+<li>
+<p>检查用户的dns resolver</p>
+<ul>
+<li><a href="https://ts.twister5.com/index.html?cdn=true">https://ts.twister5.com/index.html?cdn=true</a></li>
+</ul>
+</li>
+</ol>
 
 
 <footer class="footline">
@@ -811,7 +851,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -824,7 +863,6 @@
             
             
                 
-                    
                     
                 
                 
@@ -841,9 +879,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -896,6 +931,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -908,6 +944,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -924,6 +961,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -964,10 +1004,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/30_operations/" title="运维管理"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/50_troubleshoot/" title="故障排查"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/30_operations/20_certificate_expire/" title="证书过期提醒" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/50_troubleshoot/20_openssl/" title="检查SSL连接" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

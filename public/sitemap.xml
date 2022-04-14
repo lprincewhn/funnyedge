@@ -14,10 +14,7 @@
     <loc>http://edge.svhw.tech/10_quickstart/10_console/</loc>
     <lastmod>2022-04-12T14:22:31+08:00</lastmod>
   </url><url>
-    <loc>http://edge.svhw.tech/50_troubleshoot/10_curl/</loc>
-    <lastmod>2022-04-12T14:22:31+08:00</lastmod>
-  </url><url>
-    <loc>http://edge.svhw.tech/50_troubleshoot/20_openssl/</loc>
+    <loc>http://edge.svhw.tech/50_troubleshoot/10_dns_check/</loc>
     <lastmod>2022-04-12T14:22:31+08:00</lastmod>
   </url><url>
     <loc>http://edge.svhw.tech/40_tunning/10_originshield/</loc>
@@ -32,6 +29,9 @@
     <loc>http://edge.svhw.tech/30_operations/20_certificate_expire/</loc>
     <lastmod>2022-04-12T14:32:23+08:00</lastmod>
   </url><url>
+    <loc>http://edge.svhw.tech/50_troubleshoot/20_openssl/</loc>
+    <lastmod>2022-04-12T14:22:31+08:00</lastmod>
+  </url><url>
     <loc>http://edge.svhw.tech/10_quickstart/20_certificate/</loc>
     <lastmod>2022-04-12T14:22:31+08:00</lastmod>
   </url><url>
@@ -41,14 +41,17 @@
     <loc>http://edge.svhw.tech/20_monitor/30_access_log/</loc>
     <lastmod>2022-04-12T14:32:23+08:00</lastmod>
   </url><url>
-    <loc>http://edge.svhw.tech/10_quickstart/40_dynamic/</loc>
-    <lastmod>2022-04-12T14:32:23+08:00</lastmod>
+    <loc>http://edge.svhw.tech/50_troubleshoot/30_curl/</loc>
+    <lastmod>2022-04-12T14:22:31+08:00</lastmod>
   </url><url>
     <loc>http://edge.svhw.tech/10_quickstart/30_static/</loc>
     <lastmod>2022-04-12T14:22:31+08:00</lastmod>
   </url><url>
     <loc>http://edge.svhw.tech/30_operations/</loc>
     <lastmod>2022-04-12T14:13:47+08:00</lastmod>
+  </url><url>
+    <loc>http://edge.svhw.tech/10_quickstart/40_dynamic/</loc>
+    <lastmod>2022-04-12T14:32:23+08:00</lastmod>
   </url><url>
     <loc>http://edge.svhw.tech/40_tunning/</loc>
     <lastmod>2022-04-12T14:13:47+08:00</lastmod>
