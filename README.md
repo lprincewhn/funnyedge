@@ -8,7 +8,7 @@
 
 http://funnyedge.svhw.tech
 
-### 贡献文章
+### 增加内容
 
 #### 1. 在mac上安装hugo
 
