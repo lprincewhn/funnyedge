@@ -14,7 +14,7 @@
       
       <guid>http://funnyedge.svhw.tech/50_troubleshoot/10_dns_check/</guid>
       <description>通过dig命令可检查当前访问的PoP点及其IP：
-# 正向解析获得节点IP # dig a.test.com +short # dig dxxxxxxx.cloudfront.net +short # 反向解析查看IP归属 # dig 1.1.1.1 +short 例子 工具   检查全球DNS解析情况
+# 正向解析获得节点IP # dig a.test.com +short # dig -x dxxxxxxx.cloudfront.net +short # 反向解析查看IP归属 # dig 1.1.1.1 +short 例子 工具   检查全球DNS解析情况
  https://dnschecker.org/ https://cachecheck.opendns.com/    检查IP归属
  http://ipip.net/ https://bgp.he.net/    检查用户的dns resolver
  https://ts.twister5.com/index.html?cdn=true    </description>
