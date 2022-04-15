@@ -6,7 +6,7 @@
 
 ### 打开网站
 
-http://funnyedge.svhw.tech
+[http://funnyedge.svhw.tech](http://funnyedge.svhw.tech){target="_blank"}
 
 ### 贡献文章
 
