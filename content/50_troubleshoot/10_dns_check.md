@@ -8,11 +8,11 @@ draft: false
 通过dig命令可检查当前访问的PoP点及其IP：
 ```
 # 正向解析获得节点IP
-# dig a.test.com +short
-# dig -x dxxxxxxx.cloudfront.net +short
+dig a.test.com +short
+dig -x dxxxxxxx.cloudfront.net +short
 
 # 反向解析查看IP归属
-# dig 1.1.1.1 +short
+dig 1.1.1.1 +short
 ```
 ### 例子
 ![dig](/images/dig.png?classes=border)

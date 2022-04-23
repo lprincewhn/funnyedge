@@ -1,5 +1,5 @@
 ---
-title: "利用标签进行权限隔离和费用分摊"
+title: "利用标签进行权限限制和费用分摊"
 date: 2022-04-12T14:32:23+08:00
 weight: 10
 draft: false
@@ -11,7 +11,7 @@ https://console.aws.amazon.com/cloudshell/home
 
 CloudShell在浏览器上提供了一个运行各种aws命令行工具的的shell环境，使得你可以非常简单的使用命令管理和操作AWS资源。CloudShell直接继承登陆控制台用户的权限，无需额外使用AKSK，从而避免了AKSK泄露的风险。
 
-![打开账单控制台](/images/cloudshell.png?classes=border)
+![CloudShell](/images/cloudshell.png?classes=border)
 
 **小技巧：在控制台右上角的“操作”菜单,通过上传和下载文件可进行本地和CloudShell之间的文件传输。**
 
@@ -36,6 +36,8 @@ sam build
 sam deploy --stack-name AutoOpsCommon --region $MAIN_REGION --confirm-changeset   --resolve-s3 --capabilities CAPABILITY_IAM
 ``` 
 
+部署过程中，屏幕将会提示本次部署所需要创建/更新/删除的组件，确认后输入“y“->“回车”继续完成部署。
+
 ### 2. 部署CloudFront自动配置流程
 
 该流程将通过EventBridge侦听CloudFront分配的创建，修改和删除事件，对分配的标签和告警进行配置。
@@ -59,19 +61,25 @@ sam build
 sam deploy --stack-name AutoOpsCloudFrontProvision --region $REGION --confirm-changeset --resolve-s3 --capabilities CAPABILITY_IAM
 ```
 
+部署过程中，屏幕将会提示本次部署所需要创建/更新/删除的组件，确认后输入“y“->“回车”继续完成部署。
+
 ### 3. 使用标签分析成本
 
 3.1 激活成本标签
 
-![打开账单控制台](/images/billing_dashboard.png?classes=border&width=200px)
+点击右上角的登陆用户信息弹出下拉框，选择“账单控制面板“看看账单和费用信息
 
-![激活成本标签](/images/active_cost_tag.png?classes=border&width=700px)
+![打开账单控制面板](/images/billing_dashboard.png?classes=border&width=200px)
+
+在左侧导航栏选择“成本分配标签”
+
+![激活成本标签](/images/active_cost_tag.png?classes=border&width=7  00px)
 
 3.2 在Cost Explorer中查看账单
 
 使用以下URL打开Cost Explorer控制台：
     
-https://us-east-1.console.aws.amazon.com/cost-management/home#/custom
+https://console.aws.amazon.com/cost-management/home#/custom
 
 在图表右侧的筛选条件中，可使用标签以及其他维度对关心的费用进行过滤：
 
