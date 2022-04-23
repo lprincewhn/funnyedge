@@ -31,7 +31,11 @@
       <pubDate>Tue, 12 Apr 2022 14:32:23 +0800</pubDate>
       
       <guid>http://funnyedge.svhw.tech/20_monitor/30_access_log/</guid>
-      <description>&amp;lt;敬请期待&amp;gt;</description>
+      <description>  点击分配ID进入详情页，确认标准日志已经打开。   点击“编辑”按钮进入编辑页面，确认或设置日志存储路径   （可选）如果还没有用于存储日志的S3桶，按照以下步骤进行场景。
+3.1 使用以下URL打开S3控制台：https://s3.console.aws.amazon.com/s3/buckets 3.2 输入存储桶名称和选择区域，其余参数保留默认配置   设置Athena
+  创建表格
+  （可选）给日志存储桶添加生命周期策略，自动删除过期的日志，从而节省S3存储和Athena查询的成本。
+  </description>
     </item>
     
   </channel>

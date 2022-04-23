@@ -9,23 +9,23 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>添加域名标签进行计费 :: Funny Edge Workshop</title>
+    <title>利用标签进行权限隔离和费用分摊 :: Funny Edge Workshop</title>
 
     
-    <link href="/css/nucleus.css?1649990390" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1649990390" rel="stylesheet">
-    <link href="/css/hybrid.css?1649990390" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1649990390" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1649990390" rel="stylesheet">
-    <link href="/css/auto-complete.css?1649990390" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1649990390" rel="stylesheet">
-    <link href="/css/theme.css?1649990390" rel="stylesheet">
-    <link href="/css/tabs.css?1649990390" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1649990390" rel="stylesheet">
+    <link href="/css/nucleus.css?1650697703" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1650697703" rel="stylesheet">
+    <link href="/css/hybrid.css?1650697703" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1650697703" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1650697703" rel="stylesheet">
+    <link href="/css/auto-complete.css?1650697703" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1650697703" rel="stylesheet">
+    <link href="/css/theme.css?1650697703" rel="stylesheet">
+    <link href="/css/tabs.css?1650697703" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1650697703" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1649990390"></script>
+    <script src="/js/jquery-3.3.1.min.js?1650697703"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -333,9 +333,9 @@
  
   
     
-      <li data-nav-id="/30_operations/10_tag/" title="添加域名标签进行计费" class="dd-item active">
+      <li data-nav-id="/30_operations/10_tag/" title="利用标签进行权限隔离和费用分摊" class="dd-item active">
         <a href="/30_operations/10_tag/">
-        添加域名标签进行计费
+        利用标签进行权限隔离和费用分摊
         
         </a>
     </li>
@@ -574,7 +574,7 @@
             
           
           
-            <a href='/'>有趣的CDN</a> > <a href='/30_operations/'>运维管理</a> > 添加域名标签进行计费
+            <a href='/'>有趣的CDN</a> > <a href='/30_operations/'>运维管理</a> > 利用标签进行权限隔离和费用分摊
           
         
           
@@ -587,7 +587,19 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#0-打开cloudshell">0. 打开CloudShell</a></li>
+        <li><a href="#1-创建cloudtrail跟踪">1. 创建CloudTrail跟踪</a></li>
+        <li><a href="#2-部署cloudfront自动配置流程">2. 部署CloudFront自动配置流程</a></li>
+        <li><a href="#3-使用标签分析成本">3. 使用标签分析成本</a></li>
+        <li><a href="#4-使用标签限制权限">4. 使用标签限制权限</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -603,14 +615,102 @@
           
             <h1>
               
-              添加域名标签进行计费
+              利用标签进行权限隔离和费用分摊
             </h1>
           
 
         
 
 
-<p>&lt;敬请期待&gt;</p>
+<h3 id="0-打开cloudshell">0. 打开CloudShell</h3>
+<p><a href="https://console.aws.amazon.com/cloudshell/home">https://console.aws.amazon.com/cloudshell/home</a></p>
+<p>CloudShell在浏览器上提供了一个运行各种aws命令行工具的的shell环境，使得你可以非常简单的使用命令管理和操作AWS资源。CloudShell直接继承登陆控制台用户的权限，无需额外使用AKSK，从而避免了AKSK泄露的风险。</p>
+<p><img src="/images/cloudshell.png?classes=border" alt="打开账单控制台"></p>
+<p><strong>小技巧：在控制台右上角的“操作”菜单,通过上传和下载文件可进行本地和CloudShell之间的文件传输。</strong></p>
+<pre><code># 下载并解压AutoOps软件包
+cd ~
+wget https://github.com/lprincewhn/AutoOps/archive/refs/tags/v0.9.0-alpha.220423.zip
+unzip v0.9.0-alpha.220423.zip
+</code></pre>
+<h3 id="1-创建cloudtrail跟踪">1. 创建CloudTrail跟踪</h3>
+<p>通过以下命令部署AutoOps通用运维组件，包括：</p>
+<ul>
+<li>一个SNS主题，用于发送事件通知</li>
+<li>一个S3桶，用于存放CloudTrail跟踪文件</li>
+<li>一个CloudTrail跟踪，监控本账号所有区域的管理事件，创建跟踪后，可以通过EventBridge监控API调用事件</li>
+</ul>
+<pre tabindex="0"><code>cd ~/AutoOps-0.9.0-alpha.220423/Common  
+MAIN_REGION=us-east-1
+sam build
+sam deploy --stack-name AutoOpsCommon --region $MAIN_REGION --confirm-changeset   --resolve-s3 --capabilities CAPABILITY_IAM
+</code></pre><h3 id="2-部署cloudfront自动配置流程">2. 部署CloudFront自动配置流程</h3>
+<p>该流程将通过EventBridge侦听CloudFront分配的创建，修改和删除事件，对分配的标签和告警进行配置。</p>
+<p>标签包括：</p>
+<ul>
+<li>将分配的“备用域名”拷贝到分配的DomainName标签中</li>
+<li>将操作用户的用户名或角色名称拷贝到分配的Owner标签中</li>
+<li>将操作用户的特定标签（默认为Project和Team）拷贝到分配的相应标签中</li>
+</ul>
+<p>告警包括：</p>
+<ul>
+<li>5xx错误率&gt;5%</li>
+<li>请求次数突降&gt;80%</li>
+</ul>
+<p>命令如下：</p>
+<pre tabindex="0"><code>cd ~/AutoOps-0.9.0-alpha.220423/CloudFrontProvision
+REGION=us-east-1
+cp workflows/state.asl.all.json state.asl.json 
+sam build
+sam deploy --stack-name AutoOpsCloudFrontProvision --region $REGION --confirm-changeset --resolve-s3 --capabilities CAPABILITY_IAM
+</code></pre><h3 id="3-使用标签分析成本">3. 使用标签分析成本</h3>
+<p>3.1 激活成本标签</p>
+<p><img src="/images/billing_dashboard.png?classes=border&amp;width=200px" alt="打开账单控制台"></p>
+<p><img src="/images/active_cost_tag.png?classes=border&amp;width=700px" alt="激活成本标签"></p>
+<p>3.2 在Cost Explorer中查看账单</p>
+<p>使用以下URL打开Cost Explorer控制台：</p>
+<p><a href="https://us-east-1.console.aws.amazon.com/cost-management/home#/custom">https://us-east-1.console.aws.amazon.com/cost-management/home#/custom</a></p>
+<p>在图表右侧的筛选条件中，可使用标签以及其他维度对关心的费用进行过滤：</p>
+<p><img src="/images/ce_filter.png?classes=border&amp;width=200px" alt="Cost Explorer筛选条件"></p>
+<p>在图表上方的分组依据中，也可使用标签以及其他维度进行费用的汇总：</p>
+<p><img src="/images/ce_groupby.png?classes=border&amp;width=600px" alt="Cost Explorer分组条件"></p>
+<h3 id="4-使用标签限制权限">4. 使用标签限制权限</h3>
+<p>4.1 创建策略</p>
+<pre><code># 定义策略文档：当资源上面的标签（aws:ResourceTag/Project）存在，且不等于操作用户的标签（aws:PrincipalTag/Project）时拒绝请求
+cat &lt;&lt;EoF &gt; cloudfront-deny-by-project-policy.json
+{
+    &quot;Version&quot;: &quot;2012-10-17&quot;,
+    &quot;Statement&quot;: [
+        {
+            &quot;Effect&quot;: &quot;Deny&quot;,
+            &quot;Action&quot;: &quot;cloudfront:*&quot;,
+            &quot;Resource&quot;: &quot;*&quot;,
+            &quot;Condition&quot;: {
+                    &quot;StringNotEquals&quot;: {
+                    &quot;aws:ResourceTag/Project&quot;: &quot;${aws:PrincipalTag/Project}&quot;
+                },
+                &quot;Null&quot;: {
+                    &quot;aws:ResourceTag/Project&quot;: &quot;false&quot;
+                }
+            }
+        }
+    ]
+}
+EoF
+
+# 创建策略并将其ARN保存在环境变量
+POLICY_ARN=$(aws iam create-policy --policy-name CloudFrontDenyByProjectPolicy --policy-document file://cloudfront-deny-by-project-policy.json --query Policy.Arn --output text)
+
+echo $POLICY_ARN
+</code></pre>
+<p>4.2 给test用户附加策略</p>
+<pre><code>aws iam attach-user-policy --user-name test --policy-arn ${POLICY_ARN}
+</code></pre>
+<p>4.3 给test用户分配标签</p>
+<pre><code>aws iam tag-user --user-name test --tags Key=Project,Value=abcd
+</code></pre>
+<p>4.4 使用test用户测试</p>
+<p><img src="/images/cloufront_deny.png?classes=border" alt="打开账单控制台"></p>
+<p>可以看到，虽然test用户仍然可以列出所有分配，但是针对指定分配无法查看详情或者修改。</p>
 
 
 <footer class="footline">
@@ -977,19 +1077,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1649990390"></script>
-    <script src="/js/perfect-scrollbar.min.js?1649990390"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1649990390"></script>
-    <script src="/js/jquery.sticky.js?1649990390"></script>
-    <script src="/js/featherlight.min.js?1649990390"></script>
-    <script src="/js/highlight.pack.js?1649990390"></script>
+    <script src="/js/clipboard.min.js?1650697703"></script>
+    <script src="/js/perfect-scrollbar.min.js?1650697703"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1650697703"></script>
+    <script src="/js/jquery.sticky.js?1650697703"></script>
+    <script src="/js/featherlight.min.js?1650697703"></script>
+    <script src="/js/highlight.pack.js?1650697703"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1649990390"></script>
-    <script src="/js/learn.js?1649990390"></script>
-    <script src="/js/hugo-learn.js?1649990390"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1650697703"></script>
+    <script src="/js/learn.js?1650697703"></script>
+    <script src="/js/hugo-learn.js?1650697703"></script>
     
         
-            <script src="/mermaid/mermaid.js?1649990390"></script>
+            <script src="/mermaid/mermaid.js?1650697703"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

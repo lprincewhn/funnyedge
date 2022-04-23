@@ -12,20 +12,20 @@
     <title>使用Athena分析访问日志 :: Funny Edge Workshop</title>
 
     
-    <link href="/css/nucleus.css?1649990390" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1649990390" rel="stylesheet">
-    <link href="/css/hybrid.css?1649990390" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1649990390" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1649990390" rel="stylesheet">
-    <link href="/css/auto-complete.css?1649990390" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1649990390" rel="stylesheet">
-    <link href="/css/theme.css?1649990390" rel="stylesheet">
-    <link href="/css/tabs.css?1649990390" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1649990390" rel="stylesheet">
+    <link href="/css/nucleus.css?1650697703" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1650697703" rel="stylesheet">
+    <link href="/css/hybrid.css?1650697703" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1650697703" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1650697703" rel="stylesheet">
+    <link href="/css/auto-complete.css?1650697703" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1650697703" rel="stylesheet">
+    <link href="/css/theme.css?1650697703" rel="stylesheet">
+    <link href="/css/tabs.css?1650697703" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1650697703" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1649990390"></script>
+    <script src="/js/jquery-3.3.1.min.js?1650697703"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -333,9 +333,9 @@
  
   
     
-      <li data-nav-id="/30_operations/10_tag/" title="添加域名标签进行计费" class="dd-item ">
+      <li data-nav-id="/30_operations/10_tag/" title="利用标签进行权限隔离和费用分摊" class="dd-item ">
         <a href="/30_operations/10_tag/">
-        添加域名标签进行计费
+        利用标签进行权限隔离和费用分摊
         
         </a>
     </li>
@@ -610,7 +610,32 @@
         
 
 
-<p>&lt;敬请期待&gt;</p>
+<ol>
+<li>
+<p>点击分配ID进入详情页，确认标准日志已经打开。
+<img src="/images/cloudfront_standard_log.png?classes=border" alt="分配详情"></p>
+</li>
+<li>
+<p>点击“编辑”按钮进入编辑页面，确认或设置日志存储路径
+<img src="/images/cloudfront_log_destication.png.png?classes=border" alt="打开标准日志"></p>
+</li>
+<li>
+<p>（可选）如果还没有用于存储日志的S3桶，按照以下步骤进行场景。</p>
+<p>3.1 使用以下URL打开S3控制台：https://s3.console.aws.amazon.com/s3/buckets
+<img src="/images/s3_create_bucket.png?classes=border" alt="创建S3桶">
+3.2 输入存储桶名称和选择区域，其余参数保留默认配置
+<img src="/images/s3_create_bucket_for_cloudfront.png?classes=border" alt="创建S3桶"></p>
+</li>
+<li>
+<p>设置Athena</p>
+</li>
+<li>
+<p>创建表格</p>
+</li>
+<li>
+<p>（可选）给日志存储桶添加生命周期策略，自动删除过期的日志，从而节省S3存储和Athena查询的成本。</p>
+</li>
+</ol>
 
 
 <footer class="footline">
@@ -980,19 +1005,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1649990390"></script>
-    <script src="/js/perfect-scrollbar.min.js?1649990390"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1649990390"></script>
-    <script src="/js/jquery.sticky.js?1649990390"></script>
-    <script src="/js/featherlight.min.js?1649990390"></script>
-    <script src="/js/highlight.pack.js?1649990390"></script>
+    <script src="/js/clipboard.min.js?1650697703"></script>
+    <script src="/js/perfect-scrollbar.min.js?1650697703"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1650697703"></script>
+    <script src="/js/jquery.sticky.js?1650697703"></script>
+    <script src="/js/featherlight.min.js?1650697703"></script>
+    <script src="/js/highlight.pack.js?1650697703"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1649990390"></script>
-    <script src="/js/learn.js?1649990390"></script>
-    <script src="/js/hugo-learn.js?1649990390"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1650697703"></script>
+    <script src="/js/learn.js?1650697703"></script>
+    <script src="/js/hugo-learn.js?1650697703"></script>
     
         
-            <script src="/mermaid/mermaid.js?1649990390"></script>
+            <script src="/mermaid/mermaid.js?1650697703"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
