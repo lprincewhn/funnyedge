@@ -40,7 +40,9 @@ sam deploy --stack-name AutoOpsCommon --region $MAIN_REGION --confirm-changeset 
 
 ### 2. 部署CloudFront自动配置流程
 
-该流程将通过EventBridge侦听CloudFront分配的创建，修改和删除事件，对分配的标签和告警进行配置。
+该流程将通过EventBridge侦听CloudFront分配的创建，修改和删除事件，对分配的标签和告警进行配置。流程图如下：
+
+![CloudFrontProvision](/images/CloudFrontProvision.png?classes=border)
 
 标签包括：
 - 将分配的“备用域名”拷贝到分配的DomainName标签中
