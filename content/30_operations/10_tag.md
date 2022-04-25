@@ -75,7 +75,7 @@ sam deploy --stack-name AutoOpsCloudFrontProvision --region $REGION --confirm-ch
 
 在左侧导航栏选择“成本分配标签”
 
-![激活成本标签](/images/active_cost_tag.png?classes=border&width=7  00px)
+![激活成本标签](/images/active_cost_tag.png?classes=border&width=700px)
 
 3.2 在Cost Explorer中查看账单
 
