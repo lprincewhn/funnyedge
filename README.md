@@ -27,7 +27,7 @@ https://github.com/gohugoio/hugo/releases
 - 本地测试：hugo server --port 8080
 - 创建章节：hugo new --kind chapter 10_introduction/_index.md
 - 创建文章：hugo new 10_introduction/10_about.md
-- 编译内容：hugo -D -d docs
+- 编译内容：hugo -D --minify -d docs
 
 #### 3. 更多
 
