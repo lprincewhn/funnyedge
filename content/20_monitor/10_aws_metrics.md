@@ -5,6 +5,7 @@ weight: 10
 draft: false
 ---
 
-<敬请期待>
+在CloudFront控制台
+
 
 
