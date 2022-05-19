@@ -6,7 +6,7 @@ chapter = true
 pre = "<b>6. </b>"
 +++
 
-#  Lambda@Edge和CloudFront Function
+# Lambda@Edge和CloudFront Function
 
 Lambda@Edge是Amazon CloudFront的一个功能，它可让您在靠近应用程序用户的地方运行代码，从而提高性能，降低延迟。使用 Lambda@Edge，您无需在全球多个地方预置或管理基础设施。您只需按使用的计算时间付费——代码未运行时不产生费用。
 
