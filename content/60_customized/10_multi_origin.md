@@ -5,6 +5,16 @@ weight: 10
 draft: false
 ---
 
+### 0. 打开CloudShell
+
+https://console.aws.amazon.com/cloudshell/home
+
+CloudShell在浏览器上提供了一个运行各种aws命令行工具的的shell环境，使得你可以非常简单的使用命令管理和操作AWS资源。CloudShell直接继承登陆控制台用户的权限，无需额外使用AKSK，从而避免了AKSK泄露的风险。
+
+![CloudShell](/images/cloudshell.png?classes=border)
+
+**小技巧：在控制台右上角的“操作”菜单,通过上传和下载文件可进行本地和CloudShell之间的文件传输。**
+
 ### 1. 创建Lambda@Edge函数
 
 1.1 创建策略
@@ -65,7 +75,7 @@ draft: false
 函数：[multi-origin.zip](/multi-origin.zip)
 
     # 创建函数
-    curl -o multi-origin.zip http://localhost:1313/multi-origin.zip
+    wget http://localhost:1313/multi-origin.zip
     FUNCTION_NAME=edge-multi-origin
     aws lambda create-function --function-name $FUNCTION_NAME --runtime 'python3.7' --role $ROLE_ARN --handler lambda_function.lambda_handler --zip-file fileb://multi-origin.zip --no-cli-pager --region us-east-1
 
