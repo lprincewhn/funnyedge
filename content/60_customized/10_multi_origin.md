@@ -96,6 +96,12 @@ CloudShell在浏览器上提供了一个运行各种aws命令行工具的的shel
 
 ### 3. 设置回源标头
 
+使用HTTP标头作为Lambda@Edge函数的入参控制其行为，参数说明如下：
+
+- lambda-debug，控制日志输出，只要存在该标头，则函数输出更详细的Debug日志
+- countries-list, 国家组，以国家ISO二位编码表示，相同源站的国家为一组，组之间以逗号分隔，组内国家之间以竖线分隔
+- origin-list，源站列表，数量需要和国家组一样，位置上一一对应
+
 3.1 点击CloudFront分配ID进入详情页。
 ![修改分配](/images/modify_distribution.png?classes=border)
 
@@ -105,7 +111,4 @@ CloudShell在浏览器上提供了一个运行各种aws命令行工具的的shel
 3.3 在“添加自定义标头“部分，根据需求添加以下标头
 ![添加自定义标头](/images/add_origin_header.png?classes=border)
 
-这些标头将作为Lambda@Edge函数的入参控制其行为，参数说明如下：
-- lambda-debug，控制日志输出，只要存在该标头，则函数输出更详细的Debug日志
-- countries-list, 国家组，以国家ISO二位编码表示，相同源站的国家为一组，组之间以逗号分隔，组内国家之间以竖线分隔
-- origin-list，源站列表，数量需要和国家组一样，位置上一一对应
+
