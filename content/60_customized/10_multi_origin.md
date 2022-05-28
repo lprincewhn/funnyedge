@@ -83,7 +83,7 @@ CloudShell在浏览器上提供了一个运行各种aws命令行工具的的shel
     LAMBDA_EDGE_ARN=$(aws lambda publish-version --function-name $FUNCTION_NAME --no-cli-pager --output text --query 'FunctionArn' --region us-east-1)
     echo $LAMBDA_EDGE_ARN
 
-### 2. 关联Lambda@Edge函数
+### 2. 修改缓存行为
 
 2.1 创建源请求策略，该策略将在回源时添加CloudFront-Viewer-Country标头
 
